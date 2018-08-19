@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './MapContainer';
 
+window.gm_authFailure = () => {
+  const msg = document.getElementById('map');
+  msg.innerHTML = `<h2>Authentication failure!</h2><p>Please check your API key again or the console for more details..<p>`;
+  msg.classList.add("error");
+  msg.style.height = "10%";
+  msg.style.padding = "10px 0";
+}
+
 class App extends Component {
-  state = {
-    mapLoaded: false
-  }
-
-  componentWillMount() {
-    this.setState({mapLoaded: true})
-  }
-
   onClickMenu = () => {
     const list = document.querySelector('.list-view'),
           map = document.querySelector('#map');
@@ -39,13 +39,13 @@ class App extends Component {
   render() {
     return (
       <main className="app" role="main">
-        <div className="heading" role="heading">
+        <header className="heading">
           <button className="hamburger-icon" onClick={this.onClickMenu} tabIndex="0" aria-label="Menu Button">
             <i className="fa fa-bars" aria-hidden="true"></i>
           </button>
           <h1 className="title">Neighborhood Map</h1>
-        </div>
-        {this.state.mapLoaded ?
+        </header>
+        {navigator.onLine ?
           <MapContainer/> : <div className="error" role="alert">Google Maps did not load.  Please try again later...</div>
         }
       </main>

@@ -96,7 +96,7 @@ class MapContainer extends Component {
 					marker.photo = bestPhoto ? `${bestPhoto.prefix}200x100${bestPhoto.suffix}` : process.env.PUBLIC_URL+'/no-photo-available.jpg';
 					marker.rating = rating ? rating : 'Nothing to show';
 					marker.phone = contact.formattedPhone ? contact.formattedPhone : 'Nothing to show';
-					marker.tip = tips.count > 0 ? `"${tips.groups[1].items[0].text}"` : 'No reviews available';
+					marker.tip = tips.count > 0 ? `"${tips.groups[0].items[0].text}"` : 'No reviews available';
 					marker.url = canonicalUrl;
 
 			    // Check to make sure the infoWindow is not already opened on this marker.
@@ -134,7 +134,7 @@ class MapContainer extends Component {
         marker.infoContent =
       			 `<div class="error" role="alert">
                 <h3>Requested details for ${marker.title} from Foursqaure has been failed !</h3>
-                <p>Try again later...</p>
+                <p>Please ry again later...</p>
               </div>`;
         infoWindow.setContent(marker.infoContent);
         infoWindow.open(this.map, marker);
@@ -217,7 +217,7 @@ class MapContainer extends Component {
           	</ul>
 				    <footer id="footer">
 			        <div className="signature">Created By Malak</div>
-					    <div className="credits">Powered By <img src={Foursquare} className="fs" alt="Foursquare Icon"></img> Foursquare</div>
+					    <div className="credits" alt="">Powered By <img src={Foursquare} className="fs" alt="Foursquare logo"></img> Foursquare</div>
 				    </footer>
           </aside>
           <section id="map" role="application"/>
