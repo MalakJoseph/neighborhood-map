@@ -30,8 +30,8 @@
 
 #### Installing The Project in ***Development Mode***
 1. Use `Node.js command prompt`.
-2. Clone the repository with `git clone https://github.com/MalakJoseph/my-reads-app`.
-3. Go to the app directory `cd my-reads-app`.
+2. Clone the repository with `git clone https://github.com/MalakJoseph/neighborhood-map`.
+3. Go to the app directory `cd neighborhood-map`.
 4. Run `npm install` to install scripts and dependencies of the project.
 5. Lastly, run `npm start` to have the project running on `http://localhost:3000/`.
 6. ***Enjoy***.
